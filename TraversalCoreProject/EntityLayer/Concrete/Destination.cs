@@ -18,5 +18,11 @@ namespace EntityLayer.Concrete
         public int Capacity { get; set; }
         public double Price { get; set; }
         public bool IsActive { get; set; }
+        public string CoverImage { get; set; }= string.Empty;
+        public string Details1 { get; set; } = string.Empty;
+        public string Details2 { get; set; } = string.Empty;
+        public string Image2 { get; set; } = string.Empty;
+
+        public List<Comment>? Comments { get; set; }
     }
 }

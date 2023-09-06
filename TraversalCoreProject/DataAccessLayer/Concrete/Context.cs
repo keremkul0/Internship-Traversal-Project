@@ -1,4 +1,6 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 namespace DataAccessLayer.Concrete
 {
-    public class Context : DbContext
+    public class Context :IdentityDbContext<AppUser>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // base.OnConfiguring(optionsBuilder);
+            //base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer("server=KEREM\\SQLEXPRESS;database=TraversalDB;integrated security=true; TrustServerCertificate=True");
 
         }
@@ -25,5 +27,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<NewsLetter> NewsLetters { get; set; }
         public DbSet<SubAbout> SubAbouts { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }
