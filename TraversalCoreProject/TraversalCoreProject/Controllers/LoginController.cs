@@ -32,7 +32,7 @@ namespace TraversalCoreProject.Controllers
             };
             if (p.Password == p.ConfirmPassword)
             {
-                var result=await _userManager.CreateAsync(appUser);
+                var result=await _userManager.CreateAsync(appUser,p.Password);
                 if(result.Succeeded)
                 {
                     return RedirectToAction("SignIn");

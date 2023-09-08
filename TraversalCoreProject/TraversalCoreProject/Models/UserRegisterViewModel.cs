@@ -20,7 +20,6 @@ namespace TraversalCoreProject.Models
 		public string Mail { get; set; } = string.Empty;
 
 		[Required(ErrorMessage = "Pleas Enter Your Password")]
-		[MaxLength(10)]
 		public string Password { get; set; } = string.Empty;
 
 		[Required(ErrorMessage = "Pleas Enter Your Password Again")]
