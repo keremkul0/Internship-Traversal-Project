@@ -52,6 +52,5 @@ namespace TraversalCoreProject.Controllers
         {
             return View();
         }
-
     }
 }

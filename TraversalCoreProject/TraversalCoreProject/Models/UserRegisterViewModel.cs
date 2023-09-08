@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace TraversalCoreProject.Models 
 { 
-
 	public class UserRegisterViewModel
 	{
-		[RequiredAttribute(ErrorMessage="Pleas enter your name")]
-		public string Name { get; set; }
-
-		public string Surname { get; set; }
+		[Required(ErrorMessage="Pleas enter your name")]
+		public string Name { get; set; } = string.Empty;
+		[Required(ErrorMessage = "Pleas enter your surname")]
+		public string Surname { get; set; } = string.Empty;
 
 		[Required(ErrorMessage = "Pleas Enter Your User Name")]
-		public string UserName { get; set; }
+		public string UserName { get; set; } = string.Empty;
 
 		[Required(ErrorMessage = "Pleas Enter Your email adres")]
-		public string Mail { get; set; }
+		public string Mail { get; set; } = string.Empty;
 
 		[Required(ErrorMessage = "Pleas Enter Your Password")]
-		public string Password { get; set; }
+		[MaxLength(10)]
+		public string Password { get; set; } = string.Empty;
 
 		[Required(ErrorMessage = "Pleas Enter Your Password Again")]
 		[Compare("Password", ErrorMessage = "Passwords do not match")]
-		public string ConfirmPassword { get; set; }
+		public string ConfirmPassword { get; set; }=string.Empty;
 	}
 }
