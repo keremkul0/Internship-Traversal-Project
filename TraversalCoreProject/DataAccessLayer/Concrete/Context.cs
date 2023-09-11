@@ -15,7 +15,6 @@ namespace DataAccessLayer.Concrete
         {
             //base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer("server=KEREM\\SQLEXPRESS;database=TraversalDB;integrated security=true; TrustServerCertificate=True");
-
         }
         public DbSet <About> Abouts { get; set; }
         public DbSet<About2> About2s { get; set; }
