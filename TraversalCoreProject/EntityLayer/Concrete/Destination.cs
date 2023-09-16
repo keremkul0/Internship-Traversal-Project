@@ -22,7 +22,7 @@ namespace EntityLayer.Concrete
         public string Details1 { get; set; } = string.Empty;
         public string Details2 { get; set; } = string.Empty;
         public string Image2 { get; set; } = string.Empty;
-
+        public List<Reservation> Reservations { get; set; }
         public List<Comment>? Comments { get; set; }
     }
 }
