@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -8,10 +9,16 @@ namespace TraversalCoreProject.ViewComponents.Default
 {
 	public class _CommentList : ViewComponent
 	{
-		CommentManager commentManager = new CommentManager(new EfCommentDal());
+		private readonly ICommentService commentService;
+
+		public _CommentList(ICommentService commentService)
+		{
+			this.commentService = commentService;
+		}
+
 		public IViewComponentResult Invoke(int id)
 		{
-			var values = commentManager.TGetDestinationByID(id);
+			var values = commentService.TGetDestinationById(id);
 			return View(values);
 		}
 	}
