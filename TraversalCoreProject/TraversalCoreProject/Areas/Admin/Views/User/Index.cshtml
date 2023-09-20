@@ -1,0 +1,40 @@
+﻿@using EntityLayer.Concrete
+@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int counter =0;
+}
+
+<h1>User List</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Name Surname</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Delete</th>
+        <th>Edit</th>
+        <th>Comments</th>
+        <th>Tour History</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @{
+                counter = counter + 1;
+            }
+            <td>@counter</td>
+            <td>@item.Name @item.Surname</td>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+            <td><a href="/Admin/User/DeleteUser?id=@item.Id" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="/Admin/User/EditUser?id=@item.Id" class="btn btn-outline-success">Edit</a></td>
+            <td><a href="/Admin/User/CommentUser?id=@item.Id" class="btn btn-outline-info">Comments</a></td>
+            <td><a href="/Admin/User/ReservationUser?id=@item.Id" class="btn btn-outline-secondary">Tour History</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/User/AddUser" class="btn btn-outline-primary">New User</a>
