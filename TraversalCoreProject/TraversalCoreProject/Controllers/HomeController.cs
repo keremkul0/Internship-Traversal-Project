@@ -15,11 +15,21 @@ namespace TraversalCoreProject.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Index Page Called");
+            _logger.LogInformation("Error Log Called");
             return View();
         }
 
         public IActionResult Privacy()
         {
+            _logger.LogInformation("Privacy Page Called");
+            return View();
+        }
+
+        public IActionResult Test()
+        {
+            DateTime dateTime = Convert.ToDateTime(DateTime.Now.ToLongDateString());
+            _logger.LogInformation(dateTime + " Test Page Called");
             return View();
         }
 

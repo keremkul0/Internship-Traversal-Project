@@ -20,7 +20,12 @@ builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Contex
 builder.Services.AddControllersWithViews();
 
 builder.Services.ContainerDependencies();
-
+builder.Services.AddLogging(x =>
+{
+    x.ClearProviders();
+    x.SetMinimumLevel(LogLevel.Debug);
+    x.AddDebug();
+});
 
 builder.Services.AddMvc(config =>
 {
@@ -29,6 +34,10 @@ builder.Services.AddMvc(config =>
 });
 builder.Services.AddMvc();
 var app = builder.Build();
+
+var path=Directory.GetCurrentDirectory();
+var loggerFactory=app.Services.GetService<ILoggerFactory>();
+loggerFactory.AddFile($"{path}\\Logs\\Log1.txt");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

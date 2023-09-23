@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.Guide
+@{
+    ViewData["Title"] = "AddGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Add Guide</h1>
+<form method="post">
+	<div class="form-group">
+		@Html.Label("Name Surname")
+		<input type="text" asp-for="GuideName" class="form-control" />
+		<span asp-validation-for="GuideName" class="text-danger"></span>
+	</div>
+	
+	<br />
+	<div class="form-group">
+		@Html.Label("Image")
+		<input type="text" asp-for="Image" class="form-control" />
+		<span asp-validation-for="Image" class="text-danger"></span>
+	</div>
+
+	<br />
+	<div class="form-group">
+		@Html.Label("Instagram Url")
+		<input type="text" asp-for="InstagramUrl" class="form-control" />
+		<span asp-validation-for="InstagramUrl" class="text-danger"></span>
+	</div>
+	<br />
+	<div class="form-group">
+		@Html.Label("Twitter Url")
+		<input type="text" asp-for="TwitterUrl" class="form-control" />
+		<span asp-validation-for="TwitterUrl" class="text-danger"></span>
+	</div>
+
+	<br />
+	<div class="form-group">
+		@Html.Label("statement")
+		<textarea cols="30" rows="5" class="form-control" asp-for="GuideDescription"></textarea>
+		<span asp-validation-for="GuideDescription" class="text-danger"></span>
+	</div>
+	<br />
+
+	<button class="btn btn-outline-primary">Add Guide</button>
+</form>
+
+
