@@ -1,0 +1,5 @@
+2023-09-25T11:59:21.3537248+03:00  [INF] Now listening on: "http://localhost:5218" (d826f4b8)
+2023-09-25T11:59:21.3982678+03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-09-25T11:59:21.4001703+03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-09-25T11:59:21.4016518+03:00  [INF] Content root path: "C:\Users\kerem\Documents\GitHub\deneme\TraversalCoreProject\TraversalCoreProject" (cc26f24e)
+2023-09-25T11:59:21.7045645+03:00 0HMTTKMQMP82R:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)

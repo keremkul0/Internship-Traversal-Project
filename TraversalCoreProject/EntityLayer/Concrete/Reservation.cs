@@ -10,12 +10,12 @@ namespace EntityLayer.Concrete
     {
         public int ReservationId { get; set; }
         public int AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
+        public required AppUser AppUser { get; set; }
         public string PersonCount {  get; set; }=string.Empty;
-        public DateTime ReservationDate { get; set; }
+        public required DateTime ReservationDate { get; set; }
         public string Description { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
         public int DestinationID { get; set; }
-        public Destination Destination { get; set; }
+        public required Destination Destination { get; set; }
     }
 }
