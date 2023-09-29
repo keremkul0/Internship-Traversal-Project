@@ -38,7 +38,7 @@ namespace TraversalCoreProject.Controllers
                 var result = await _userManager.CreateAsync(appUser, p.Password);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("SignIn");
+                    return RedirectToAction("Index","Home");
                 }
                 else
                 {
